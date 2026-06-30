@@ -7,7 +7,7 @@ import { INITIAL_PRODUCTS, INITIAL_BLOGS } from './src/data/initialData.js';
 import { Product, Order, SupportTicket, Review, BlogPost, AIStyleReport } from './src/types.js';
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 app.use(express.json({ limit: '10mb' }));
 
