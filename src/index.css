@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* NEW MINIMALIST COLOR PALETTE SPECIFICATION */
+  --color-theme-teal: #1A4B50;
+  --color-theme-ivory: #FCFAF6;
+  --color-theme-taupe: #9E8E81;
+  --color-theme-calmocean: #4B7B8C;
+  --color-theme-dustydenim: #5E7182;
+  --color-theme-midnight: #111A29;
+  --color-theme-powdersky: #E3EBEE;
+
+  /* Mapping brand design system vars to the new premium palette */
+  --color-brand-black: var(--color-theme-midnight);
+  --color-brand-gold: var(--color-theme-teal);
+  --color-brand-gold-dark: #123539;
+  --color-brand-blue: var(--color-theme-calmocean);
+  --color-brand-cream: var(--color-theme-ivory);
+  --color-brand-linen: var(--color-theme-powdersky);
+  --color-brand-taupe: var(--color-theme-taupe);
+  --color-brand-mushroom: var(--color-theme-taupe);
+  --color-brand-gray: var(--color-theme-dustydenim);
+  --color-brand-sage: var(--color-theme-calmocean);
+
+  /* Global Gray Override to map to the new minimalist palette */
+  --color-gray-50: var(--color-theme-ivory);
+  --color-gray-100: var(--color-theme-powdersky);
+  --color-gray-200: var(--color-theme-taupe);
+  --color-gray-300: var(--color-theme-taupe);
+  --color-gray-400: var(--color-theme-dustydenim);
+  --color-gray-500: var(--color-theme-dustydenim);
+  --color-gray-600: var(--color-theme-dustydenim);
+  --color-gray-700: var(--color-theme-midnight);
+  --color-gray-800: var(--color-theme-midnight);
+  --color-gray-900: var(--color-theme-midnight);
+
+  /* Also stone and zinc override for flawless fallback compatibility */
+  --color-stone-50: var(--color-theme-ivory);
+  --color-stone-100: var(--color-theme-powdersky);
+  --color-stone-200: var(--color-theme-taupe);
+  --color-stone-300: var(--color-theme-taupe);
+  --color-stone-400: var(--color-theme-dustydenim);
+  --color-stone-500: var(--color-theme-dustydenim);
+  --color-stone-600: var(--color-theme-dustydenim);
+  --color-stone-700: var(--color-theme-midnight);
+  --color-stone-800: var(--color-theme-midnight);
+  --color-stone-900: var(--color-theme-midnight);
+
+  --color-zinc-50: var(--color-theme-ivory);
+  --color-zinc-100: var(--color-theme-powdersky);
+  --color-zinc-200: var(--color-theme-taupe);
+  --color-zinc-300: var(--color-theme-taupe);
+  --color-zinc-400: var(--color-theme-dustydenim);
+  --color-zinc-500: var(--color-theme-dustydenim);
+  --color-zinc-600: var(--color-theme-dustydenim);
+  --color-zinc-700: var(--color-theme-midnight);
+  --color-zinc-800: var(--color-theme-midnight);
+  --color-zinc-900: var(--color-theme-midnight);
+
+  /* Overriding amber and emerald scales to blend seamlessly */
+  --color-amber-50: var(--color-theme-ivory);
+  --color-amber-100: var(--color-theme-powdersky);
+  --color-amber-200: var(--color-theme-taupe);
+  --color-amber-300: var(--color-theme-teal);
+  --color-amber-400: var(--color-theme-teal);
+  --color-amber-500: var(--color-theme-teal);
+  --color-amber-600: #123539;
+  --color-amber-700: var(--color-theme-midnight);
+  --color-amber-800: var(--color-theme-midnight);
+  --color-amber-900: var(--color-theme-midnight);
+
+  --color-emerald-50: var(--color-theme-ivory);
+  --color-emerald-100: var(--color-theme-powdersky);
+  --color-emerald-500: var(--color-theme-calmocean);
+  --color-emerald-600: var(--color-theme-calmocean);
+  --color-emerald-700: var(--color-theme-midnight);
+  --color-emerald-800: var(--color-theme-midnight);
+  --color-emerald-900: var(--color-theme-midnight);
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-brand-cream text-brand-gray antialiased selection:bg-brand-gold/20 selection:text-brand-black;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-brand-black;
+  }
+}
+
+/* Custom visual animations & scrollbar utilities */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-theme-powdersky);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-theme-taupe);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-theme-calmocean);
+}
+
+/* Smooth glassmorphism styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark-glass-panel {
+  background: rgba(30, 30, 28, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+

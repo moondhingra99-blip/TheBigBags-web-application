@@ -1,0 +1,6 @@
+{
+  "name": "The Big Bags",
+  "description": "Premium eCommerce web application for The Big Bags, styled in pure alignment with the neutral luxury aesthetic of Luxe Carry Co, featuring a custom curated product line, interactive AI Style Advisor, smart Shopping Assistant, and comprehensive user/admin dashboards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
