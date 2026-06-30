@@ -2,6 +2,9 @@
 // Production entrypoint for Hostinger Node.js hosting.
 // Hostinger looks for a server.js file at the root directory to start the application.
 
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
 try {
   // Load the compiled full-stack production server
   require('./dist/server.cjs');
